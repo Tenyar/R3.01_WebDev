@@ -1,0 +1,51 @@
+2. Protocole HTTP:
+
+5) Protocole HTTP utilisé
+
+6) 200 : succès de la requête ;
+
+7)Server: Apache/2.4.57 (Debian)
+
+8) Content-Type: text/html
+Sa signification : que le type de fichier est html
+
+9) Content-Length: 10701
+
+10) Ce sont les deux retours 'chariots' aka les 2 entrées.
+
+12) Parce que nous avons importer que le fichier html et non les autres contenant les images par exemples.
+
+13) 
+
+HTTP/1.1 301 Moved Permanently
+Date: Mon, 11 Sep 2023 13:06:24 GMT
+Server: Apache
+Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+Location: https://lena.ujf-grenoble.fr/
+Content-Length: 237
+Connection: close
+Content-Type: text/html; charset=iso-8859-1
+
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html><head>
+<title>301 Moved Permanently</title>
+</head><body>
+<h1>Moved Permanently</h1>
+<p>The document has moved <a href="https://lena.ujf-grenoble.fr/">here</a>.</p>
+</body></html>
+Connection closed by foreign host.
+
+
+Signification : 301 et 302 : redirection, respectivement permanente et temporaire.
+
+14) 
+
+l'adresse ou récupérer la page correcte : 
+
+Location: https://lena.ujf-grenoble.fr/
+
+Comment récupérer cette page avec telnet ?
+
+telnet lena.ujf-grenoble.fr 80
+
+sauf que on ne peut pas manuellement avec telnet (donc encoder) car le site est en http(s).
