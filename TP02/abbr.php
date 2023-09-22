@@ -5,33 +5,32 @@
             'PHP' => 'Hypertext PreProcessor',
             'CSS' => 'Cascading Style Sheets');
 
+  function abbr(string $key): string {
+      // prendre le tableau en global.
+      global $abbre;
+      if(isset($abbre[$key])){
+          return "<abbr title=\"$abbre[$key]\">$key</abbr>";
+      }
+      else
+      {
+          return $key;
+      }
+  }
 
-    function abbr(string $key): string {
-        // prendre le tableau en global.
-        global $abbre;
-        if(isset($abbre[$key])){
-            return "<abbr title=\"$abbre[$key]\">$key</abbr>";
-        }
-        else
-        {
-            return $key;
-        }
-    }
+  function abbrAll(): string {
+      // prendre le tableau en global.
+      global $abbre;
+      $chaine = "<table>";
+      foreach($abbre as $key => $value)
+      {
+          $chaine .= "<tr><th>$key</th><td>$value</td></tr>";
+      }
+      // rajout de la fin de la table.
+      // $chaine .= "</table>"; marche aussi en mieux
+      $chaine = $chaine."</table>";
 
-    function abbrAll(): string {
-        // prendre le tableau en global.
-        global $abbre;
-        $chaine = "<table>";
-        foreach($abbre as $key => $value)
-        {
-            $chaine = "$chaine<tr><th>$key</th><td>$value</td></tr>";
-        }
-        // rajout de la fin de la table.
-        // $chaine .= "</table>"; marche aussi en mieux
-        $chaine = $chaine."</table>";
-
-        return $chaine;
-    }
+      return $chaine;
+  }
 ?>
 
 <!DOCTYPE html>
