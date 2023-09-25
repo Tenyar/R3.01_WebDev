@@ -16,7 +16,7 @@ function playPath(): string{
   $chaine;
   if(isset($music_name)){
     $chaine = "<figcaption><img src=\"data/$music_name.jpeg\"/>";
-    $chaine .= "<audio src=\"data/$music_name.mp3\" autoplay=true controls></audio>";
+    $chaine .= "<audio src=\"data/$music_name.mp3\" controls></audio>";
     $chaine .= "<music-song>$pieces[1]</music-song><music-group>$pieces[0]</music-group></figcaption>";
   }
   // returning all the tags with the infos.
