@@ -1,7 +1,10 @@
 <?php
-  // Affectation du nom de la music (l'argument string passé en entier).
+// Affectation du nom de la music (l'argument string passé en entier).
 $music_name = $_GET['music'] ?? null;
-if($music_name == null){
+// BONUS QUESTION: ALTERNATIVE METHOD FOR HTTP_REFERER (usable in other web browser such as Edge)
+// JE PASSE PAR ARGUMENT LE NOM DE LA REF POUR REVENIR
+$prev_page = $_GET['prev_page'] ?? null;
+if($music_name == null || $prev_page == null){
   exit('[ERROR] La musique n"a pas pu être chargée.');
 }
 
@@ -22,6 +25,8 @@ function playPath(): string{
   // returning all the tags with the infos.
   return $chaine;
 }
+
+
 ?>
 
 <!DOCTYPE html>
@@ -37,7 +42,20 @@ function playPath(): string{
   </header>
   <main>
   <nav>
-    <a href="staticJukebox.html"> <- RETOUR</a>
+    <?php
+    /*
+    Hold way not supported on all the web browser and on client
+    $complete_path = $_SERVER['HTTP_REFERER'];
+    */
+
+    // Passage par variable depuis la page
+    if($prev_page == "dynamic"){
+      echo ("<a href=../../../TP04/dynamicJukeboxData/dynamicJukebox.php> <- RETOUR</a>");
+    }
+    else if($prev_page == "static"){
+      echo ("<a href=staticJukebox.html> <- RETOUR</a>");
+    }
+    ?>
   </nav>
     <section>
     <?= playPath(); ?>

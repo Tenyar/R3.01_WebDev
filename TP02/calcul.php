@@ -1,5 +1,6 @@
 <?php
 //  qui retourne la valeur de droite si celle de gauche est nulle, sinon celle de gauche. 
+// e.g : calcul.php?a=1&op=%2B&b=2
     $a = $_GET['a'] ?? null;
     $op = $_GET['op'] ?? null;
     $b = $_GET['b'] ?? null;
