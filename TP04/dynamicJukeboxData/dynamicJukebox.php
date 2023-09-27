@@ -2,7 +2,6 @@
 include('readDelimitedData.php');
 // Lecture de toutes les musiques
 $tab_musics = readDelimitedData('jukeboxData.txt');
-
 ?>
 
 <!DOCTYPE html>

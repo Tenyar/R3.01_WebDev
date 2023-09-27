@@ -1,18 +1,18 @@
 <?php
 // Affectation du nom de la music (l'argument string passé en entier).
 $music_name = $_GET['music'] ?? null;
-// BONUS QUESTION: ALTERNATIVE METHOD FOR HTTP_REFERER (usable in other web browser such as Edge)
-// JE PASSE PAR ARGUMENT LE NOM DE LA REF POUR REVENIR
+// QUESTION BONUS: ALTERNATIVE METHOD FOR HTTP_REFERER (usable in other web browser such as Edge).
+// je passe par argument le nom de la référence pour revenir à l'ancienne page.
 $prev_page = $_GET['prev_page'] ?? null;
 if($music_name == null || $prev_page == null){
   exit('[ERROR] La musique n"a pas pu être chargée.');
 }
 
-// separate in a table (indexed) of string every string between "/"
+// sépare en un tableau de string (indéxé) tout les string entre '/'. 
 $pieces = explode("/", $music_name);
 
 function playPath(): string{
-  // accessing the global variables.
+  // accéder au variables globales.
   global $music_name;
   global $pieces;
 
@@ -22,11 +22,9 @@ function playPath(): string{
     $chaine .= "<audio src=\"data/$music_name.mp3\" controls></audio>";
     $chaine .= "<music-song>$pieces[1]</music-song><music-group>$pieces[0]</music-group></figcaption>";
   }
-  // returning all the tags with the infos.
+  // retourne toutes les balises.
   return $chaine;
 }
-
-
 ?>
 
 <!DOCTYPE html>
@@ -48,7 +46,7 @@ function playPath(): string{
     $complete_path = $_SERVER['HTTP_REFERER'];
     */
 
-    // Passage par variable depuis la page
+    // passage par variable depuis la page
     if($prev_page == "dynamic"){
       echo ("<a href=../../../TP04/dynamicJukeboxData/dynamicJukebox.php> <- RETOUR</a>");
     }

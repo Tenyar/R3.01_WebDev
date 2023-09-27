@@ -1,6 +1,5 @@
 <?php
 // 1.2
-  
   function bonjour() {
     // on ne chope pas la variable 'global' $nom du coup marche pas
     if (isset($nom)) {

@@ -45,9 +45,7 @@ abbr,th {
 </style></head>
 
 <body>
-
   <h1>Exemple d'utilisation des abréviations en HTML</h1>
-
   <p>Le langage <?= abbr('PHP') ?> produit généralement
     du <?= abbr('HTML') ?> mais peu produire aussi
     du <?= abbr('XML') ?> ou même
@@ -55,6 +53,5 @@ abbr,th {
   </p>
   <p>Voici toutes les abbréviations connues : </p>
   <?= abbrAll() ?>
-  
 </body>
 </html>

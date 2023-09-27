@@ -1,5 +1,4 @@
 <?php
-
 // Analyse le fichier de nom $filename
 // Ce fichier contient des informations séparées par $delimiter
 // Le résultat est un tableau de tableau.
@@ -30,7 +29,6 @@ function readDelimitedData(string $filename, string $delimiter='|') : array {
     // Get les lignes pas à pas
     $result = fgets($text);
 
-
     // Pour ne pas avoir la dernière ligne (empty string)
     // avec var_dump($result); on voit qu'une fois toutes les lignes parcourus il renvoie pas une chaine (String) mais un boolean FALSE.
     // donc check si il n'est pas du type 'boolean' avant d'accéder à un index.
@@ -51,6 +49,4 @@ function readDelimitedData(string $filename, string $delimiter='|') : array {
   // Retourne le tableau
   return $tab;
 }
-
-
- ?>
+?>

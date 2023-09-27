@@ -82,7 +82,6 @@ class Abbr {
       $keywords[$value] = $this->show($value); // on overwrite le string par la balise abréviation
       $out .= $keywords[$value]." ";
     }
-
     return $out;
   }
 
@@ -90,13 +89,11 @@ class Abbr {
   function size() : int {
     return count($this->abbr);
   }
-
 }
-
 // L'objet abréviation pour le domaine informatique
 $abbr = new Abbr($abbr_computing);
-
 ?>
+
 <!DOCTYPE html>
 <html lang=fr dir="ltr">
   <head>

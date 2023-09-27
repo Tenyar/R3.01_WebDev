@@ -5,5 +5,4 @@ include('readDelimitedData.php');
 $musics = readDelimitedData('jukeboxData.txt');
 
 var_dump($musics);
-
  ?>

@@ -1,5 +1,4 @@
 <?php 
-
   $a = 1;
   $a .= '0 est une chaîne'; // on concatène une chaine à la suite de l'entier
   //$a +=(int)'0 est une chaîne'; Transtypage

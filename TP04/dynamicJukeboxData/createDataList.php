@@ -55,10 +55,12 @@ function readJukeBoxData(){
                     }
                 }
             }
+            /*
             else{
                 // On ne print rien en retour pour ne pas polluer (juste pour tester).
-                //echo "Impossible d'ouvrir le répertoire '$openData'\n";    
+                echo "Impossible d'ouvrir le répertoire '$openData'\n";    
             }
+            */
         }
         // Ferme le gestionnaire de répertoire principal lorsque vous avez terminé de l'utiliser.
         // closes the main directory handle only when the loop completes, and all subdirectories have been processed.
@@ -69,6 +71,5 @@ function readJukeBoxData(){
         }
     }
 }
-
 readJukeBoxData();
 ?>
