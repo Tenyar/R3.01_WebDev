@@ -1,0 +1,29 @@
+body {
+  font-family: Verdana;
+}
+
+h1 {
+  font-size: 1.5em;
+  margin: auto;
+  color: white;
+  background-color: black;
+  text-align: center;
+}
+
+/* Place le formulaire au centre de la fenêtre */
+form {
+  width: 350px;
+  margin: auto;
+}
+
+/* Espace tout ce qui est dans le formulaire d'un demi caractère */
+form>* {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+/* Place le label et l'input sur une même ligne aligné à droite et à gauche */
+label {
+  display: flex;
+  justify-content: space-between;
+}

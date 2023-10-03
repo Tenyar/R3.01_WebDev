@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>Login</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Pour éviter d'afficher le mdp dans PHP ou dans l'url je mets la methode en post (dans le cours du message HTTP) -->
+  <form action="login.php" method="post">
+    <h1>Login sur un site</h1>
+    <label> Nom <input type="text" name="nom" placeholder="Votre nom"> </label>
+    <label> Mot de passe  <input type="password" name="mot de passe">  </label>
+    <button type="reset">Reset</button>
+    <button type="submit">Envoyer</button>
+  </form>
+
+</body>
+</html>
