@@ -49,8 +49,17 @@ function listMusique(): string{
   global $pageNum;
   global $pageSize;
   global $dao;
+  // Vérifie combien de page il nous reste à afficher.
+  if(($pageNum + 8) <= ceil($dao->maxId() / 8)){
+    $newPageSize = 8;
+  }
+  else{
+    $newPageSize = ceil($dao->maxId() / 8) - ($pageNum-1); // dernière page ou des musiques seront affiché.
+  }
+
+  global $dao;
   $chaine = '';
-  for($i = 0; $i < $pageSize; $i++){
+  for($i = 0; $i < $newPageSize; $i++){
     $newPage = $i + $pageNum;
     $chaine .= "<a href=jukebox.php?page=$newPage&pageSize=8>$newPage</a>";
   }
@@ -118,13 +127,13 @@ function listMusique(): string{
       <?php 
       for($i = 1; $i <= $pageSize; $i++):
       try{
-        if($pageNum > 1){
+        if($pageSize == 8){
           // Else get the music at $i + num of pages multiplied by number of musics on this page.
-          $music = $dao->get($i + (($pageNum-1) * $pageSize)); // PROBLEM IS HERE IT DOESNT TAKE THE GOOD PAGES WHEN PAGESIZE IS CHANGED BECAUSE THE $pageSize CHANGE !!!
+          $music = $dao->get($i + (($pageNum-1) * $pageSize)); // Problem is it's going further than 70 pages.
         }
         else{
         // get the music at index $i;
-          $music = $dao->get($i);
+          $music = $dao->get($i + ($pageNum-1));
         }
       }
       catch(Exception $e){
