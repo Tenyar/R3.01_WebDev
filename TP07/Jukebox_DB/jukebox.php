@@ -125,27 +125,30 @@ function listMusique(): string{
   <main>
     <section>
       <?php 
+      
       for($i = 1; $i <= $pageSize; $i++):
-      try{
+        try{
         if($pageSize == 8){
           // Else get the music at $i + num of pages multiplied by number of musics on this page.
-          $music = $dao->get($i + (($pageNum-1) * $pageSize)); // Problem is it's going further than 70 pages.
+          $music = $dao->get($i + (($pageNum-1) * $pageSize));
         }
         else{
         // get the music at index $i;
-          $music = $dao->get($i + ($pageNum-1));
+        // La solution était de rajouter le nombre 8 qui à servit à diviser le nombre max de musique pour trouver en combien de page on peut en ranger 8 pour trouver le bon index quand on rétrecit la page.
+          $music = $dao->get($i + ($pageNum-1) * 8); // todo: Problem is that we need to look for 554 musics or here we never go past 70
         }
       }
       catch(Exception $e){
         die("Max number of music reached !");
       }
-
+      
       // $title = $music->__get('title'); pas jolie, $title = $music->title; --> déclenche le getteur globale quand même
       $id = $music->id;
       $cover = $music->cover;
       $title = $music->title;
       $author = $music->author;
       $category = $music->category;
+
       echo
       <<<ITEM
         <figure>
