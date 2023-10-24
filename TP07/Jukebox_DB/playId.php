@@ -3,7 +3,10 @@
 // Inclusion du modèle
 require_once('model/music.class.php');
 require_once('model/dao.class.php');
+$id = $_GET['id'] ?? 1;
 
+$dao = new DAO();
+$music = $dao->get($id);
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -23,8 +26,8 @@ require_once('model/dao.class.php');
     </nav>
     <section>
       <figure>
-        <img src="http://www-info.iut2.upmf-grenoble.fr/intranet/enseignements/ProgWeb/data/musiques/img/1.jpg">
-        <audio src="http://www-info.iut2.upmf-grenoble.fr/intranet/enseignements/ProgWeb/data/musiques/mp3/1.mp3" controls autoplay ></audio>
+        <img src="http://www-info.iut2.upmf-grenoble.fr/intranet/enseignements/ProgWeb/data/musiques/img/<?=$music->cover?>">
+        <audio src="http://www-info.iut2.upmf-grenoble.fr/intranet/enseignements/ProgWeb/data/musiques/mp3/<?=$music->mp3?>" controls autoplay ></audio>
       </figure>
     </section>
     <br/>
