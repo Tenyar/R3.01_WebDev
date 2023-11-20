@@ -1,0 +1,105 @@
+
+html {
+  --color-blue: #1877f2;
+  --color-grey: WhiteSmoke;
+  height: 100%; /* Pour permetre le centrage vertical sur la page */
+}
+
+body {
+  /* Fond légèrement gris */
+  background-color: WhiteSmoke ;
+  /* Font adapté ecrans */
+  font-family: "Poppins",sans-serif;
+  /* Pour permetre le centrage vertical sur la page */
+  margin: 0px;
+  height: 100%;
+}
+
+p {
+  padding: 0.7em;
+}
+
+/* main directement apres body permet de placer au centre son contenu */
+body>main {
+  /* Place le contenu au centre */
+  /* Attention : il faut que la boite englobate soit à 100% de hauteur jusqu'a html compris */
+  display: flex;
+  height: 100%;
+  margin: 0px; /* pour un centrage correct */
+  justify-content: center;
+  align-items: center;
+}
+
+div {
+  background-color: white;
+  border-radius: 0.5em;
+}
+
+/* Formulaire dans main */
+main form {
+  background-color: white;
+  border-radius: 0.5em;
+  padding: 1em;
+  align-self: center;
+  width: 20em;
+  text-align: center;
+}
+
+
+/* Place les entrées et boutons en vertical
+avec des espaces par rapport à la taille des caractèrees
+*/
+input, button {
+  box-sizing: border-box;
+  width: 20em;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1em;
+  padding: 0.7em;
+}
+
+/* Bouton bleu */
+form button {
+  color: white;
+  background-color: var(--color-blue);
+  border: 0px;
+  font-family: inherit;
+  border-radius: 0.5em;
+}
+
+/* Séparateur à la fin du paragraphe */
+main form p {
+  padding-bottom: 1em;
+  border-bottom: 2px solid var(--color-grey);
+}
+
+/* Texte d'un lien */
+form a {
+  font-size: 0.8em;
+  text-decoration: none;
+  color: var(--color-blue);
+}
+
+/************** Mise en forme du header ************************/
+header {
+  background-color: black;
+  color: white;
+  padding: 1em;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Affiche le formulaire du header à l'horizontale */
+header form {
+  display: flex;
+}
+
+header p {
+  margin: 0px;
+}
+
+header form * {
+  width: auto;
+  margin: 0px;
+}

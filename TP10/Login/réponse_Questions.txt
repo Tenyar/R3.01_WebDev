@@ -1,0 +1,28 @@
+1) Quel fichier PHP va recevoir et traiter les données de ce formulaire ? 
+
+Le contrôleur index.php en utilisant le modèle
+
+2) Pourquoi l'URL du lien de "Forgotten password?" contient le répertoire "view" ? 
+
+Par ce que index.php ne devrait pas être dans le répertoire view mais en dehors vu que c'est la première page ou on arrive.
+...
+
+3) Pourquoi le lien de "Forgotten password?" n'est pas une bonne solution ?
+
+Car il ne permet pas d'inclure index.php dans le répertorie des vues.
+
+4) Pourquoi la méthode post est utilisée dans ce formulaire ?
+
+Car nous envoyons des données sensibles, qui devrait être caché dans l'entête du message HTTP plutôt que en query dans l'url
+
+5) Qu'est-ce qui conditionne ce fonctionnement (dans le HTML et/ou dans le CSS) ? 
+
+C'est le type="password"
+
+6) Est-ce que le masquage du mot de passe en entrée (input) avec l'usage de POST est suffisant pour la sécurité de ce mot de passe ? 
+
+Il pourrait toujours être intersepter ? il faudrait le chiffrer ?
+
+7) Du coté du PHP (index.php), comment peut-on savoir si l'utilisateur à cliqué sur le bouton "login" ou "new" ? 
+
+Il faut récupérer les arguments que le formulaires envoie dans le $_POST avec "assign" sur la page.
